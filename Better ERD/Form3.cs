@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace Better_ERD
 {
-    public partial class Form2 : MaterialForm
+    public partial class Form3 : MaterialForm
     {
-        public string Title { get; set; }
-        public string Content { get; set; }
-        public Form2()
+        public bool delete { get; set; }
+        public Form3()
         {
             InitializeComponent();
+            this.delete = false;
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
@@ -28,27 +28,19 @@ namespace Better_ERD
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-
-            this.Title = materialSingleLineTextField1.Text;
-            this.Content = richTextBox1.Text;
+            this.delete = true;
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
-        private void Form2_KeyDown(object sender, KeyEventArgs e)
+        private void Form3_KeyDown(object sender, KeyEventArgs e)
         {
-            switch(e.KeyData)
+            switch (e.KeyData)
             {
                 case Keys.Escape:
                     this.Close();
                     break;
             }
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-            materialSingleLineTextField1.Text = this.Title;
-            richTextBox1.Text = this.Content;
         }
     }
 }

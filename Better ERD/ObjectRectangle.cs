@@ -16,6 +16,7 @@ namespace Better_ERD
         private int type;
         private string title;
         private string content;
+        private List<ObjectRectangle> connected = new List<ObjectRectangle>();
 
         public int X_Coord   // property
         {

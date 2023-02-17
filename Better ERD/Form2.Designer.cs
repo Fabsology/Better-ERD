@@ -63,6 +63,7 @@
             this.materialSingleLineTextField1.SelectionStart = 0;
             this.materialSingleLineTextField1.Size = new System.Drawing.Size(247, 23);
             this.materialSingleLineTextField1.TabIndex = 0;
+            this.materialSingleLineTextField1.TabStop = false;
             this.materialSingleLineTextField1.UseSystemPasswordChar = false;
             // 
             // richTextBox1
@@ -86,8 +87,11 @@
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.materialSingleLineTextField1);
             this.Controls.Add(this.materialRaisedButton1);
+            this.KeyPreview = true;
             this.Name = "Form2";
             this.Text = "Add New Element";
+            this.Load += new System.EventHandler(this.Form2_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form2_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
